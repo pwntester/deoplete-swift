@@ -83,7 +83,10 @@ class SourceKitten(object):
             self.__command,
             'complete',
             '--file', path,
-            '--offset', str(offset)
+            '--offset', str(offset),
+            '--',
+            '-target', 'x86_64-apple-ios9.0',
+            '-sdk', '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk',
         ]
 
         stdout_data, stderr_data = SourceKitten.__execute(command_complete)
